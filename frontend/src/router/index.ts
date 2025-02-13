@@ -1,10 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '@/views/HomeView.vue';
-import TaskListView from '@/views/TaskListView.vue';
+import TodayTasksView from '@/views/TodayTasksView.vue';
+import ImportantTasksView from '@/views/ImportantTasksView.vue';
+import OtherTasksView from '@/views/OtherTasksView.vue';
+import AboutView from '@/views/AboutView.vue';
 
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/tasks', component: TaskListView },
+  { path: '/', redirect: '/today' },
+  { path: '/today', component: TodayTasksView },
+  { path: '/important', component: ImportantTasksView },
+  { path: '/other', component: OtherTasksView },
+  { path: '/about', components: AboutView }
 ];
 
 const router = createRouter({

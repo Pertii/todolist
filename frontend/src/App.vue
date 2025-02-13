@@ -1,20 +1,23 @@
 <template>
-  <div>
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/tasks">Task List</router-link>
-    </nav>
-    <router-view />
+  <div class="app-layout">
+    <Sidebar />
+    <main>
+      <router-view></router-view>
+    </main>
   </div>
 </template>
 
+<script setup>
+import Sidebar from '@/components/Sidebar.vue';
+</script>
+
 <style scoped>
-nav {
-  margin-bottom: 20px;
+.app-layout {
+  display: flex;
 }
-nav a {
-  margin-right: 10px;
-  text-decoration: none;
-  color: #42b983;
+
+main {
+  flex-grow: 1;
+  padding: 20px;
 }
 </style>
